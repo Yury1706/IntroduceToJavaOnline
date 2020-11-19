@@ -1,6 +1,6 @@
 package basicsOfSoftwareCodeDevelopment;
 
-public class LineProgramExercises {
+public class LineProgramExercise {
 
     double a = 1.0;
     double b = 2.0;
@@ -52,17 +52,17 @@ public class LineProgramExercises {
     }
 
     public static void main(String[] args) {
-        LineProgramExercises lPEx1 = new LineProgramExercises();
+        LineProgramExercise lPEx1 = new LineProgramExercise();
         lPEx1.getZ();
-        LineProgramExercises lPEx2 = new LineProgramExercises();
+        LineProgramExercise lPEx2 = new LineProgramExercise();
         lPEx2.algebraicValue();
-        LineProgramExercises lPEx3 = new LineProgramExercises();
+        LineProgramExercise lPEx3 = new LineProgramExercise();
         lPEx3.geometricValue();
-        LineProgramExercises lPEx4 = new LineProgramExercises();
+        LineProgramExercise lPEx4 = new LineProgramExercise();
         lPEx4.changePlaces();
-        LineProgramExercises lPEx5 = new LineProgramExercises();
+        LineProgramExercise lPEx5 = new LineProgramExercise();
         lPEx5.getTime(3759);
-        LineProgramExercises lPEx6 = new LineProgramExercises();
+        LineProgramExercise lPEx6 = new LineProgramExercise();
         lPEx6.pointCoordinate(-4, 5);
     }
 
