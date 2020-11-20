@@ -81,16 +81,79 @@ public class CycleExercise {
         System.out.println();
     }
 
+    public void showSymbolAndCode() {
+        for (int i = 0; i < 256; i++) {
+            System.out.println("Код символа " + (char) i + " = " + i);
+        }
+    }
+
+    public void findAllDividers() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите начальное число (начало промежутка): ");
+        int m = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Введите конечное число (конец промежутка): ");
+        int n = scanner.nextInt();
+
+        for (int i = m; i <= n; i++) {
+            System.out.print("Делители числа " + i + " являются: ");
+            int count = 0;
+            for (int j = 2; j <= i / j; j++) {
+                if (i % j == 0) {
+                    System.out.print(j + " ");
+                    count++;
+                    if (i / j != j) {
+                        System.out.print(i / j + " ");
+                        count++;
+                    }
+                }
+            }
+            if (count == 0) {
+                System.out.print("1 и " + i);
+            }
+            System.out.println();
+        }
+    }
+
+    public void findRepeatedValues() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число: ");
+        int x = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Введите второе число: ");
+        int y = scanner.nextInt();
+        int[] arrayRepeatValues = new int[10];
+
+        while (x > 0) {
+            arrayRepeatValues[x % 10]++;
+            x /= 10;
+        }
+
+        String resultString = "";
+        for (int i = y; i > 0; i /= 10) {
+            if (arrayRepeatValues[i % 10] != 0 && !resultString.contains(Integer.toString(i % 10))) {
+               resultString += i % 10 + " ";
+            }
+        }
+        System.out.println(resultString);
+    }
+
     public static void main(String[] args) {
-//        ArraysExercises exercise1 = new ArraysExercises();
-//        exercise1.showSumUntilValue();
-//        ArraysExercises exercise2 = new ArraysExercises();
-//        exercise2.valueOfFunction();
-//        ArraysExercises exercise3 = new ArraysExercises();
-//        exercise3.findSumSquareFirst100Numbers();
-//        CycleExercise exercise4 = new CycleExercise();
-//        exercise4.findMultiSquareFirst200Numbers();
+        CycleExercise exercise1 = new CycleExercise();
+        exercise1.showSumUntilValue();
+        CycleExercise exercise2 = new CycleExercise();
+        exercise2.valueOfFunction();
+        CycleExercise exercise3 = new CycleExercise();
+        exercise3.findSumSquareFirst100Numbers();
+        CycleExercise exercise4 = new CycleExercise();
+        exercise4.findMultiSquareFirst200Numbers();
         CycleExercise exercise5 = new CycleExercise();
         exercise5.findSumOfNumberSeries();
+        CycleExercise exercise6 = new CycleExercise();
+        exercise6.showSymbolAndCode();
+        CycleExercise exercise7 = new CycleExercise();
+        exercise7.findAllDividers();
+        CycleExercise exercise8 = new CycleExercise();
+        exercise8.findRepeatedValues();
     }
 }

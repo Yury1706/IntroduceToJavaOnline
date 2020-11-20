@@ -26,15 +26,20 @@ public class LineProgramExercise {
         System.out.println(z);
     }
 
-    public void changePlaces() {
-        double r = 321.159;
-        String stringR = String.valueOf(r);
-        String substr1 = stringR.substring(0, 3);
-        String substr2 = stringR.substring(3, 4);
-        String substr3 = stringR.substring(4);
-        stringR = substr3 + substr2 + substr1;
-        r = Double.parseDouble(stringR);
-        System.out.println(r);
+    public void changePlaces(double r) {
+
+        double result = (r * 1000) % 1000 + (int) r / 1000.0;
+        System.out.println(result);
+
+// Через String.substring
+
+//        String stringR = String.valueOf(r);
+//        String substr1 = stringR.substring(0, 3);
+//        String substr2 = stringR.substring(3, 4);
+//        String substr3 = stringR.substring(4);
+//        stringR = substr3 + substr2 + substr1;
+//        r = Double.parseDouble(stringR);
+//        System.out.println(r);
     }
 
     public void getTime(int time) {
@@ -59,7 +64,7 @@ public class LineProgramExercise {
         LineProgramExercise lPEx3 = new LineProgramExercise();
         lPEx3.geometricValue();
         LineProgramExercise lPEx4 = new LineProgramExercise();
-        lPEx4.changePlaces();
+        lPEx4.changePlaces(123.456);
         LineProgramExercise lPEx5 = new LineProgramExercise();
         lPEx5.getTime(3759);
         LineProgramExercise lPEx6 = new LineProgramExercise();
