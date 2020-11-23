@@ -131,7 +131,8 @@ public class CycleExercise {
 
         String resultString = "";
         for (int i = y; i > 0; i /= 10) {
-            if (arrayRepeatValues[i % 10] != 0 && !resultString.contains(Integer.toString(i % 10))) {
+            if (arrayRepeatValues[i % 10] != 0 &&
+                    !resultString.contains(Integer.toString(i % 10))) {
                resultString += i % 10 + " ";
             }
         }
