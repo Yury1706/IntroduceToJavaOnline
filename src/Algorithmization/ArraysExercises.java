@@ -15,6 +15,7 @@ public class ArraysExercises {
             }
         }
         System.out.println("Сумма элементов, кратных k равна: " + sum);
+        System.out.println();
     }
 
     private void changeValueLessThanZ(int... a) {
@@ -30,6 +31,7 @@ public class ArraysExercises {
         }
         System.out.println(Arrays.toString(arrayA));
         System.out.println("Количество замен равно: " + count);
+        System.out.println();
     }
 
     private void findPositiveNegativeAndZeroValue(int n) {
@@ -57,6 +59,7 @@ public class ArraysExercises {
                 countNegativeValue);
         System.out.println("Количество нулевых элементов в массиве равно: " +
                 countZeroValue);
+        System.out.println();
     }
 
     private void changeMinAndMaxValue(int n) {
@@ -84,6 +87,7 @@ public class ArraysExercises {
         arrayN[maxIndexValue] = someInt;
         System.out.println("Массив после замены максимального значения с минимальным выглядит так:");
         System.out.println(Arrays.toString(arrayN));
+        System.out.println();
     }
 
     private void printValueIfIndexLessThanValue(int n) {
@@ -101,6 +105,7 @@ public class ArraysExercises {
                 System.out.print(arrayN[i] + " ");
             }
         }
+        System.out.println();
     }
 
     private void printValueWithPrimeNumberIndex(int n) {
@@ -126,6 +131,7 @@ public class ArraysExercises {
             }
         }
         System.out.println("\nСумма элементов с индексом простого числа:\n" + sum);
+        System.out.println();
     }
 
     private void findMaxValue(int n) {
@@ -172,6 +178,7 @@ public class ArraysExercises {
                 }
         }
         System.out.println("Максимальное значение суммы равно: " + maxValue);
+        System.out.println();
     }
 
     private void removeMinValue(int n) {
@@ -204,6 +211,66 @@ public class ArraysExercises {
 
         System.out.println("Массив без минимальных значений:");
         System.out.println(Arrays.toString(arrayWithoutMinValues));
+        System.out.println();
+    }
+
+    private void findTheMostRepeatableValue(int n) {
+        int[] arrayN = new int[n];
+        int countOfTheMostRepeatableValue = 1;
+        int indexOfTheMostRepetableValue = 0;
+
+        for (int i = 0; i < arrayN.length; i++) {
+            arrayN[i] = (int) (Math.random() * 11);
+        }
+        System.out.println("Первоначально массив выглядит вот так:");
+        System.out.println(Arrays.toString(arrayN));
+
+        for (int i = 0; i < arrayN.length; i++) {
+            int counter = 1;
+            for (int j = i + 1; j < arrayN.length; j++) {
+                if (arrayN[i] == arrayN[j]) {
+                    counter++;
+                }
+            }
+            if (counter == countOfTheMostRepeatableValue) {
+                if (arrayN[i] < arrayN[indexOfTheMostRepetableValue]){
+                    indexOfTheMostRepetableValue = i;
+                }
+            }
+            if (counter > countOfTheMostRepeatableValue) {
+                countOfTheMostRepeatableValue = counter;
+                indexOfTheMostRepetableValue = i;
+            }
+        }
+        System.out.println("Самый часто встречающийся элемент массива: "
+                + arrayN[indexOfTheMostRepetableValue]);
+        System.out.println("Число повторов: " + countOfTheMostRepeatableValue);
+        System.out.println();
+    }
+
+    private void throwFromArraySecondElement(int n) {
+        int[] arrayN = new int[n];
+
+        for (int i = 0; i < arrayN.length; i++) {
+            arrayN[i] = (int) (Math.random() * 11);
+        }
+        System.out.println("Первоначально массив выглядит вот так:");
+        System.out.println(Arrays.toString(arrayN));
+
+        for (int i = 0; i < arrayN.length; i++) {
+            if (i % 2 != 0) {
+                arrayN[i] = 0;
+            }
+        }
+
+        int j = 0;
+        for (int i = 1; i < arrayN.length; i++) {
+            if (i % 2 == 0) {
+                arrayN[++j] = arrayN[i];
+                arrayN[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(arrayN));
     }
 
     public static void main(String[] args) {
@@ -223,6 +290,10 @@ public class ArraysExercises {
         ex7.findMaxValue(4);
         ArraysExercises ex8 = new ArraysExercises();
         ex8.removeMinValue(10);
+        ArraysExercises ex9 = new ArraysExercises();
+        ex9.findTheMostRepeatableValue(10);
+        ArraysExercises ex10 = new ArraysExercises();
+        ex10.throwFromArraySecondElement(10);
     }
 
 }
