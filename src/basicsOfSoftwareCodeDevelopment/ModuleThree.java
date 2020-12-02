@@ -3,7 +3,7 @@ package basicsOfSoftwareCodeDevelopment;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class CycleExercise {
+public class ModuleThree {
 
     public void showSumUntilValue() {
         int result = 0;
@@ -140,21 +140,21 @@ public class CycleExercise {
     }
 
     public static void main(String[] args) {
-        CycleExercise exercise1 = new CycleExercise();
+        ModuleThree exercise1 = new ModuleThree();
         exercise1.showSumUntilValue();
-        CycleExercise exercise2 = new CycleExercise();
+        ModuleThree exercise2 = new ModuleThree();
         exercise2.valueOfFunction();
-        CycleExercise exercise3 = new CycleExercise();
+        ModuleThree exercise3 = new ModuleThree();
         exercise3.findSumSquareFirst100Numbers();
-        CycleExercise exercise4 = new CycleExercise();
+        ModuleThree exercise4 = new ModuleThree();
         exercise4.findMultiSquareFirst200Numbers();
-        CycleExercise exercise5 = new CycleExercise();
+        ModuleThree exercise5 = new ModuleThree();
         exercise5.findSumOfNumberSeries();
-        CycleExercise exercise6 = new CycleExercise();
+        ModuleThree exercise6 = new ModuleThree();
         exercise6.showSymbolAndCode();
-        CycleExercise exercise7 = new CycleExercise();
+        ModuleThree exercise7 = new ModuleThree();
         exercise7.findAllDividers();
-        CycleExercise exercise8 = new CycleExercise();
+        ModuleThree exercise8 = new ModuleThree();
         exercise8.findRepeatedValues();
     }
 }

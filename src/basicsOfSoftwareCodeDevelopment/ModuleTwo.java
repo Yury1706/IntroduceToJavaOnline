@@ -1,6 +1,6 @@
 package basicsOfSoftwareCodeDevelopment;
 
-public class BranchExercise {
+public class ModuleTwo {
 
     public void getTriangleByTwoCorners(int firstCorner, int secondCorner) {
         if (firstCorner + secondCorner >= 180) {
@@ -50,15 +50,15 @@ public class BranchExercise {
     }
 
     public static void main(String[] args) {
-        BranchExercise brEx1 = new BranchExercise();
+        ModuleTwo brEx1 = new ModuleTwo();
         brEx1.getTriangleByTwoCorners(30, 60);
-        BranchExercise brEx2 = new BranchExercise();
+        ModuleTwo brEx2 = new ModuleTwo();
         brEx2.findMaxBetweenMin(9, 8, 7, 10);
-        BranchExercise brEx3 = new BranchExercise();
+        ModuleTwo brEx3 = new ModuleTwo();
         brEx3.isPointsOnOneLine(1, 2, 2, 4, 3, 6);
-        BranchExercise brEx4 = new BranchExercise();
+        ModuleTwo brEx4 = new ModuleTwo();
         brEx4.isGetInHole(3, 2);
-        BranchExercise brEx5 = new BranchExercise();
+        ModuleTwo brEx5 = new ModuleTwo();
         brEx5.solveFunction(3);
     }
 

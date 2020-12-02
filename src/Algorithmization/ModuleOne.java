@@ -2,7 +2,7 @@ package Algorithmization;
 
 import java.util.Arrays;
 
-public class ArraysExercises {
+public class ModuleOne {
 
     private void findSumOfElements(int... n) {
         int k = 3;
@@ -274,25 +274,25 @@ public class ArraysExercises {
     }
 
     public static void main(String[] args) {
-        ArraysExercises ex1 = new ArraysExercises();
+        ModuleOne ex1 = new ModuleOne();
         ex1.findSumOfElements(5, 3, 45, 6, 8, 7, 16, 24);
-        ArraysExercises ex2 = new ArraysExercises();
+        ModuleOne ex2 = new ModuleOne();
         ex2.changeValueLessThanZ(10, 15, 16, 20, 31, 5, 22, 17);
-        ArraysExercises ex3 = new ArraysExercises();
+        ModuleOne ex3 = new ModuleOne();
         ex3.findPositiveNegativeAndZeroValue(10);
-        ArraysExercises ex4 = new ArraysExercises();
+        ModuleOne ex4 = new ModuleOne();
         ex4.changeMinAndMaxValue(10);
-        ArraysExercises ex5 = new ArraysExercises();
+        ModuleOne ex5 = new ModuleOne();
         ex5.printValueIfIndexLessThanValue(10);
-        ArraysExercises ex6 = new ArraysExercises();
+        ModuleOne ex6 = new ModuleOne();
         ex6.printValueWithPrimeNumberIndex(14);
-        ArraysExercises ex7 = new ArraysExercises();
+        ModuleOne ex7 = new ModuleOne();
         ex7.findMaxValue(4);
-        ArraysExercises ex8 = new ArraysExercises();
+        ModuleOne ex8 = new ModuleOne();
         ex8.removeMinValue(10);
-        ArraysExercises ex9 = new ArraysExercises();
+        ModuleOne ex9 = new ModuleOne();
         ex9.findTheMostRepeatableValue(10);
-        ArraysExercises ex10 = new ArraysExercises();
+        ModuleOne ex10 = new ModuleOne();
         ex10.throwFromArraySecondElement(10);
     }
 
