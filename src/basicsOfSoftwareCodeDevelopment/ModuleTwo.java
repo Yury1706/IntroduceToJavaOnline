@@ -2,6 +2,19 @@ package basicsOfSoftwareCodeDevelopment;
 
 public class ModuleTwo {
 
+    public static void main(String[] args) {
+        ModuleTwo brEx1 = new ModuleTwo();
+        brEx1.getTriangleByTwoCorners(30, 60);
+        ModuleTwo brEx2 = new ModuleTwo();
+        brEx2.findMaxBetweenMin(9, 8, 7, 10);
+        ModuleTwo brEx3 = new ModuleTwo();
+        brEx3.isPointsOnOneLine(1, 2, 2, 4, 3, 6);
+        ModuleTwo brEx4 = new ModuleTwo();
+        brEx4.isGetInHole(3, 2);
+        ModuleTwo brEx5 = new ModuleTwo();
+        brEx5.solveFunction(3);
+    }
+
     public void getTriangleByTwoCorners(int firstCorner, int secondCorner) {
         if (firstCorner + secondCorner >= 180) {
             System.out.println("Треугольника с такими углами не существует");
@@ -48,18 +61,4 @@ public class ModuleTwo {
             System.out.println(result);
         }
     }
-
-    public static void main(String[] args) {
-        ModuleTwo brEx1 = new ModuleTwo();
-        brEx1.getTriangleByTwoCorners(30, 60);
-        ModuleTwo brEx2 = new ModuleTwo();
-        brEx2.findMaxBetweenMin(9, 8, 7, 10);
-        ModuleTwo brEx3 = new ModuleTwo();
-        brEx3.isPointsOnOneLine(1, 2, 2, 4, 3, 6);
-        ModuleTwo brEx4 = new ModuleTwo();
-        brEx4.isGetInHole(3, 2);
-        ModuleTwo brEx5 = new ModuleTwo();
-        brEx5.solveFunction(3);
-    }
-
 }

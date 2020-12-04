@@ -5,6 +5,25 @@ import java.util.Scanner;
 
 public class ModuleThree {
 
+    public static void main(String[] args) {
+        ModuleThree exercise1 = new ModuleThree();
+        exercise1.showSumUntilValue();
+        ModuleThree exercise2 = new ModuleThree();
+        exercise2.valueOfFunction();
+        ModuleThree exercise3 = new ModuleThree();
+        exercise3.findSumSquareFirst100Numbers();
+        ModuleThree exercise4 = new ModuleThree();
+        exercise4.findMultiSquareFirst200Numbers();
+        ModuleThree exercise5 = new ModuleThree();
+        exercise5.findSumOfNumberSeries();
+        ModuleThree exercise6 = new ModuleThree();
+        exercise6.showSymbolAndCode();
+        ModuleThree exercise7 = new ModuleThree();
+        exercise7.findAllDividers();
+        ModuleThree exercise8 = new ModuleThree();
+        exercise8.findRepeatedValues();
+    }
+
     public void showSumUntilValue() {
         int result = 0;
         Scanner scanner = new Scanner(System.in);
@@ -137,24 +156,5 @@ public class ModuleThree {
             }
         }
         System.out.println(resultString);
-    }
-
-    public static void main(String[] args) {
-        ModuleThree exercise1 = new ModuleThree();
-        exercise1.showSumUntilValue();
-        ModuleThree exercise2 = new ModuleThree();
-        exercise2.valueOfFunction();
-        ModuleThree exercise3 = new ModuleThree();
-        exercise3.findSumSquareFirst100Numbers();
-        ModuleThree exercise4 = new ModuleThree();
-        exercise4.findMultiSquareFirst200Numbers();
-        ModuleThree exercise5 = new ModuleThree();
-        exercise5.findSumOfNumberSeries();
-        ModuleThree exercise6 = new ModuleThree();
-        exercise6.showSymbolAndCode();
-        ModuleThree exercise7 = new ModuleThree();
-        exercise7.findAllDividers();
-        ModuleThree exercise8 = new ModuleThree();
-        exercise8.findRepeatedValues();
     }
 }

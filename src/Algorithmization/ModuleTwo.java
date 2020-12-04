@@ -4,6 +4,24 @@ import java.util.Scanner;
 
 public class ModuleTwo {
 
+    public static void main(String[] args) {
+        showOddColumnWhereFirstValueIsMoreThanLast(5, 9);
+        showDiagonalValues(5);
+        showStringAndColumnOfTheMatrix(5, 6, 2, 3);
+        showSquareMatrixFirstExercise(6);
+        showSquareMatrixSecondExercise(10);
+        showSquareMatrixThirdExercise(8);
+        showSquareMatrixAndCountPositiveValues(4);
+        changeColumn(5, 7);
+        showSumAndMaxSumOfColumns(4,5);
+        findPositiveValuesOnMainDiagonalOfMatrix(5);
+        showMatrixTenByTwenty();
+        sortStringsOfMatrix(5, 5);
+        sortColumnsOfMatrix(6, 4);
+        buildMatrixByZeroAndOne(8, 5);
+        findMaxAndChangeNegativeValues(5,9);
+    }
+
     public static void showOddColumnWhereFirstValueIsMoreThanLast(int numOfStrings, int numOfColumns) {
         int[][] arrayOfValues = new int[numOfStrings][numOfColumns];
 
@@ -494,23 +512,5 @@ public class ModuleTwo {
             System.out.println();
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        showOddColumnWhereFirstValueIsMoreThanLast(5, 9);
-        showDiagonalValues(5);
-        showStringAndColumnOfTheMatrix(5, 6, 2, 3);
-        showSquareMatrixFirstExercise(6);
-        showSquareMatrixSecondExercise(10);
-        showSquareMatrixThirdExercise(8);
-        showSquareMatrixAndCountPositiveValues(4);
-        changeColumn(5, 7);
-        showSumAndMaxSumOfColumns(4,5);
-        findPositiveValuesOnMainDiagonalOfMatrix(5);
-        showMatrixTenByTwenty();
-        sortStringsOfMatrix(5, 5);
-        sortColumnsOfMatrix(6, 4);
-        buildMatrixByZeroAndOne(8, 5);
-        findMaxAndChangeNegativeValues(5,9);
     }
 }

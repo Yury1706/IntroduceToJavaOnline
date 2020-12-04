@@ -7,7 +7,23 @@ public class ModuleOne {
     double c = 3.0;
     double x = 180.0;
     double y = 90.0;
+
     double z;
+
+    public static void main(String[] args) {
+        ModuleOne lPEx1 = new ModuleOne();
+        lPEx1.getZ();
+        ModuleOne lPEx2 = new ModuleOne();
+        lPEx2.algebraicValue();
+        ModuleOne lPEx3 = new ModuleOne();
+        lPEx3.geometricValue();
+        ModuleOne lPEx4 = new ModuleOne();
+        lPEx4.changePlaces(123.456);
+        ModuleOne lPEx5 = new ModuleOne();
+        lPEx5.getTime(3759);
+        ModuleOne lPEx6 = new ModuleOne();
+        lPEx6.pointCoordinate(-4, 5);
+    }
 
     public void getZ() {
         z = ((a - 3) * b / 2) + c;
@@ -55,20 +71,4 @@ public class ModuleOne {
             System.out.println("true");
         } else System.out.println("false");
     }
-
-    public static void main(String[] args) {
-        ModuleOne lPEx1 = new ModuleOne();
-        lPEx1.getZ();
-        ModuleOne lPEx2 = new ModuleOne();
-        lPEx2.algebraicValue();
-        ModuleOne lPEx3 = new ModuleOne();
-        lPEx3.geometricValue();
-        ModuleOne lPEx4 = new ModuleOne();
-        lPEx4.changePlaces(123.456);
-        ModuleOne lPEx5 = new ModuleOne();
-        lPEx5.getTime(3759);
-        ModuleOne lPEx6 = new ModuleOne();
-        lPEx6.pointCoordinate(-4, 5);
-    }
-
 }

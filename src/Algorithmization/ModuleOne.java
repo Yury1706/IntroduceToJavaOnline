@@ -4,6 +4,29 @@ import java.util.Arrays;
 
 public class ModuleOne {
 
+    public static void main(String[] args) {
+        ModuleOne ex1 = new ModuleOne();
+        ex1.findSumOfElements(5, 3, 45, 6, 8, 7, 16, 24);
+        ModuleOne ex2 = new ModuleOne();
+        ex2.changeValueLessThanZ(10, 15, 16, 20, 31, 5, 22, 17);
+        ModuleOne ex3 = new ModuleOne();
+        ex3.findPositiveNegativeAndZeroValue(10);
+        ModuleOne ex4 = new ModuleOne();
+        ex4.changeMinAndMaxValue(10);
+        ModuleOne ex5 = new ModuleOne();
+        ex5.printValueIfIndexLessThanValue(10);
+        ModuleOne ex6 = new ModuleOne();
+        ex6.printValueWithPrimeNumberIndex(14);
+        ModuleOne ex7 = new ModuleOne();
+        ex7.findMaxValue(4);
+        ModuleOne ex8 = new ModuleOne();
+        ex8.removeMinValue(10);
+        ModuleOne ex9 = new ModuleOne();
+        ex9.findTheMostRepeatableValue(10);
+        ModuleOne ex10 = new ModuleOne();
+        ex10.throwFromArraySecondElement(10);
+    }
+
     private void findSumOfElements(int... n) {
         int k = 3;
         int sum = 0;
@@ -272,28 +295,4 @@ public class ModuleOne {
         }
         System.out.println(Arrays.toString(arrayN));
     }
-
-    public static void main(String[] args) {
-        ModuleOne ex1 = new ModuleOne();
-        ex1.findSumOfElements(5, 3, 45, 6, 8, 7, 16, 24);
-        ModuleOne ex2 = new ModuleOne();
-        ex2.changeValueLessThanZ(10, 15, 16, 20, 31, 5, 22, 17);
-        ModuleOne ex3 = new ModuleOne();
-        ex3.findPositiveNegativeAndZeroValue(10);
-        ModuleOne ex4 = new ModuleOne();
-        ex4.changeMinAndMaxValue(10);
-        ModuleOne ex5 = new ModuleOne();
-        ex5.printValueIfIndexLessThanValue(10);
-        ModuleOne ex6 = new ModuleOne();
-        ex6.printValueWithPrimeNumberIndex(14);
-        ModuleOne ex7 = new ModuleOne();
-        ex7.findMaxValue(4);
-        ModuleOne ex8 = new ModuleOne();
-        ex8.removeMinValue(10);
-        ModuleOne ex9 = new ModuleOne();
-        ex9.findTheMostRepeatableValue(10);
-        ModuleOne ex10 = new ModuleOne();
-        ex10.throwFromArraySecondElement(10);
-    }
-
 }

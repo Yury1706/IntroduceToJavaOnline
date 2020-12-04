@@ -2,6 +2,17 @@ package Algorithmization;
 
 public class ModuleThree {
 
+    public static void main(String[] args) {
+        uniteArrays();
+        buildSequence();
+        selectionSort();
+        bubbleSort();
+        insertingSort();
+        shellSort();
+        findEnterValuesInSequence();
+        showTheSolutionOfTheProblem();
+    }
+
     public static void uniteArrays() {
         int k = 4;
         int i1 = 0;
@@ -177,6 +188,7 @@ public class ModuleThree {
     /*
     Задача 8, модуль 3
      */
+
     public static int findNOD(int a1, int a2) {
         int result;
         if (a1 % a2 == 0) {
@@ -192,7 +204,6 @@ public class ModuleThree {
         int nok = a1 * a2 / findNOD(a1, a2);
         return nok;
     }
-
     public static void showTheSolutionOfTheProblem() {
         int[] arrayOfP = {5, 8, 6, 4, 9};
         int[] arrayOfQ = {5, 7, 8, 9, 15};
@@ -227,18 +238,8 @@ public class ModuleThree {
         }
         System.out.println();
     }
+
     /*
     Задача 8, модуль 3
     */
-
-    public static void main(String[] args) {
-        uniteArrays();
-        buildSequence();
-        selectionSort();
-        bubbleSort();
-        insertingSort();
-        shellSort();
-        findEnterValuesInSequence();
-        showTheSolutionOfTheProblem();
-    }
 }
