@@ -181,6 +181,86 @@ public class ModuleFour {
         System.out.printf("Площадь четырехугольника равна: %.2f", area);
     }
 
+    public static void showNumbersOfValue(int userValue) {
+        int count = 0;
+        for (int i = userValue; i > 0; i /= 10) {
+            count++;
+        }
+
+        int[] numberOfUserValue = new int[count];
+        for (int i = count - 1; i >= 0; i--) {
+            int item = userValue % 10;
+            numberOfUserValue[i] = item;
+            userValue /= 10;
+        }
+        System.out.println("Вот все цифры из вашего введенного числа: " + Arrays.toString(numberOfUserValue));
+        System.out.println();
+    }
+
+    public static void whichOneIsMore(int firstValue, int secondValue) {
+        int countFirst = 0;
+        int countSecond = 0;
+
+        for (int i = firstValue; i > 0; i /= 10) {
+            countFirst++;
+        }
+
+        for (int i = secondValue; i > 0; i /= 10) {
+            countSecond++;
+        }
+
+        if (countFirst == countSecond) {
+            System.out.println("В введенных числах одинаковое количество цифр.");
+        } else if (countFirst > countSecond) {
+            System.out.println("У первого числа больше цифр чем у второго");
+        } else {
+            System.out.println("У второго числа больше цифр чем у первого");
+        }
+        System.out.println();
+    }
+
+    public static void buildArray(int k, int n) {
+        int[] arrayOfNumbers = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arrayOfNumbers[i] = i + 1;
+        }
+
+        int count = 0;
+        for (int i = arrayOfNumbers.length - 1; i > count; i--) {
+            int result = 0;
+            for (int j = arrayOfNumbers[i]; j > 0; j /= 10) {
+                result += j % 10;
+            }
+            if (result == k) {
+                int temp = arrayOfNumbers[i];
+                arrayOfNumbers[i] = arrayOfNumbers[count];
+                arrayOfNumbers[count] = temp;
+                count++;
+                i++;
+            }
+        }
+
+        int[] hits = new int[count];
+        for (int i = 0; i < count; i++) {
+            hits[i] = arrayOfNumbers[i];
+        }
+
+        for (int i = 0; i < hits.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < hits.length; j++) {
+                if (hits[j] < hits[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = hits[minIndex];
+            hits[minIndex] = hits[i];
+            hits[i] = temp;
+        }
+        System.out.println(Arrays.toString(hits));
+        System.out.println();
+    }
+
     public static void main(String[] args) {
 //        showResultsOfNOKAndNOD(12, 30);
 //        findNODForFourValues(78, 294, 570, 36);
@@ -190,7 +270,9 @@ public class ModuleFour {
 //        isValuesSimple(8, 15, 9);
 //        calculateSumOfFactorials(1, 9);
 //        sumOfThreeValues(1, 2, 3, 4, 5, 6);
-        showAreaOfQuadrangle(6, 4, 8, 10);
-
+//        showAreaOfQuadrangle(6, 4, 8, 10);
+//        showNumbersOfValue(4798765);
+//        whichOneIsMore(12345, 123456);
+        buildArray(10, 100);
     }
 }
