@@ -1,5 +1,6 @@
 package Algorithmization;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 
 public class ModuleFour {
@@ -7,12 +8,12 @@ public class ModuleFour {
     /*
     Эти методы будут использоваться в других статических методах
      */
-    public static int getFactorial(int n) {
-        int result;
+    public static BigInteger getFactorial(int n) {          // Перевел в BigInteger, т.к. в задании 13 нужны большие значения... Сперва был Long
+        BigInteger result;
         if (n == 1) {
-            return 1;
+            return BigInteger.valueOf(1);
         }
-        result = getFactorial(n - 1) * n;
+        result = getFactorial(n - 1).multiply(BigInteger.valueOf(n));
         return result;
     }
 
@@ -134,10 +135,10 @@ public class ModuleFour {
     }
 
     public static void calculateSumOfFactorials(int firstBorderValue, int lastBorderValue) {
-        int totalSum = 0;
+        BigInteger totalSum = new BigInteger("0");
         for (int i = firstBorderValue; i <= lastBorderValue; i++) {
             if (i % 2 != 0) {
-                totalSum += getFactorial(i);
+                totalSum = totalSum.add(getFactorial(i));
             }
         }
         System.out.printf("Сумма факториалов нечетных значений в промежутке от %,d до %,d равна: %,d"
@@ -261,6 +262,28 @@ public class ModuleFour {
         System.out.println();
     }
 
+    public static void findTwinsNumbers(int n, int n2) {
+        int[] array = new int[n2 - n + 1];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = n;
+            n++;
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            BigInteger result = getFactorial(array[i] - 1).add(BigInteger.ONE).multiply(BigInteger.valueOf(4)).add(BigInteger.valueOf(array[i]));
+            BigInteger denominator = BigInteger.valueOf(array[i] * (array[i] + 2));
+            if (result.mod(denominator) == BigInteger.ZERO) {
+                System.out.printf("\nПара - близнецы: %,d и %,d", array[i], array[i + 2]);
+            }
+        }
+        System.out.println();
+    }
+
+    public static void getArmstrongValues() {
+
+    }
+
     public static void main(String[] args) {
 //        showResultsOfNOKAndNOD(12, 30);
 //        findNODForFourValues(78, 294, 570, 36);
@@ -273,6 +296,7 @@ public class ModuleFour {
 //        showAreaOfQuadrangle(6, 4, 8, 10);
 //        showNumbersOfValue(4798765);
 //        whichOneIsMore(12345, 123456);
-        buildArray(10, 100);
+//        buildArray(9, 100);
+        findTwinsNumbers(2, 315);
     }
 }
