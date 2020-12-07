@@ -5,9 +5,30 @@ import java.util.Arrays;
 
 public class ModuleFour {
 
+    public static void main(String[] args) {
+//        showResultsOfNOKAndNOD(12, 30);
+//        findNODForFourValues(78, 294, 570, 36);
+//        calculateArea(4);
+//        findTheBiggestLengthBetweenTwoPoints();
+//        showSecondMaxValue(15, 56, 66, 4, 29, 87, 54, 59, 88, 66);
+//        isValuesSimple(8, 15, 9);
+//        calculateSumOfFactorials(1, 9);
+//        sumOfThreeValues(1, 2, 3, 4, 5, 6);
+//        showAreaOfQuadrangle(6, 4, 8, 10);
+//        showNumbersOfValue(4798765);
+//        whichOneIsMore(12345, 123456);
+//        buildArray(9, 100);
+//        findTwinsNumbers(2, 315);
+//        getArmstrongValues(5_000_000);
+//        showNumbersWithIncreasingSequence(10000);
+//        showSumOfValuesWithOddNumbers(1510);
+        countOperations(51);
+    }
+
     /*
     Эти методы будут использоваться в других статических методах
      */
+
     public static BigInteger getFactorial(int n) {          // Перевел в BigInteger, т.к. в задании 13 нужны большие значения... Сперва был Long
         BigInteger result;
         if (n == 1) {
@@ -31,6 +52,14 @@ public class ModuleFour {
     public static int findNOK(int a1, int a2) {
         int nok = a1 * a2 / findNOD(a1, a2);
         return nok;
+    }
+
+    public static int getDegree(int number) {
+        int degreeN = 0;
+        for (int i = number; i > 0; i /= 10) {
+            degreeN++;
+        }
+        return degreeN;
     }
 
      /*
@@ -146,13 +175,13 @@ public class ModuleFour {
         System.out.println();
     }
 
-
     /*
     Мне кажется, что в задании 8 ошибка.
     Если я правильно понял, то правильно должно быть "D[1]+D[2]+D[3];D[2]+D[3]+D[4];D[3]+D[4]+D[5];D[4]+D[5]+D[6]".
     В задании пропущен блок D[2]+D[3]+D[4], либо я сделал не так. Без него не вижу логики...
     Если что не судите строго
      */
+
     public static void sumOfThreeValues(int... userValues) {
         int[] arrayD = userValues;
         int sum = 0;
@@ -280,23 +309,93 @@ public class ModuleFour {
         System.out.println();
     }
 
-    public static void getArmstrongValues() {
+    public static void getArmstrongValues(int k) {
+        int[] arrayOfNumbers = new int[k];
 
+        for (int i = 0; i < arrayOfNumbers.length; i++) {
+            arrayOfNumbers[i] = i + 1;
+        }
+
+        int count = 0;
+        for (int i = 0; i < arrayOfNumbers.length; i++) {
+            int result = 0;
+            int degreeN = getDegree(arrayOfNumbers[i]);
+            for (int j = arrayOfNumbers[i]; j > 0; j /= 10) {
+                result += Math.pow(j % 10, degreeN);
+            }
+            if (result == arrayOfNumbers[i]) {
+                System.out.printf("|%,d| ", arrayOfNumbers[i]);
+            }
+        }
+        System.out.println();
     }
 
-    public static void main(String[] args) {
-//        showResultsOfNOKAndNOD(12, 30);
-//        findNODForFourValues(78, 294, 570, 36);
-//        calculateArea(4);
-//        findTheBiggestLengthBetweenTwoPoints();
-//        showSecondMaxValue(15, 56, 66, 4, 29, 87, 54, 59, 88, 66);
-//        isValuesSimple(8, 15, 9);
-//        calculateSumOfFactorials(1, 9);
-//        sumOfThreeValues(1, 2, 3, 4, 5, 6);
-//        showAreaOfQuadrangle(6, 4, 8, 10);
-//        showNumbersOfValue(4798765);
-//        whichOneIsMore(12345, 123456);
-//        buildArray(9, 100);
-        findTwinsNumbers(2, 315);
+    public static void showNumbersWithIncreasingSequence(int lastValue) {
+        for (int i = 1; i <= lastValue; i++) {
+            int degree = getDegree(i);          //Использовал этот метод, хотя лучше было бы сделать метод countNumbersOfValue, но реализация была бы такая же
+            int hitsOnTarget = 0;
+            int input = i;
+            for (int j = 0; j < degree && input / 10 > 0; j++) {
+                if ((input % 10) - ((input / 10) % 10) == 1) {
+                    hitsOnTarget++;
+                }
+                input /= 10;
+            }
+            if (hitsOnTarget == degree - 1) {   //degree - 1, т.к. мы не сравниваем самую левую цифру с "0", если надо убрать из списка от 1-9, то добавим условие (&& hitsOnTarget > 0)
+                System.out.printf("|%,d|", i);
+            }
+        }
+        System.out.println();
     }
+
+    public static void showSumOfValuesWithOddNumbers(int lastValue) {
+        int sum = 0;
+        for (int i = 1; i <= lastValue; i++) {
+            int degree = getDegree(i);          //Использовал этот метод, хотя лучше было бы сделать метод countNumbersOfValue, но реализация была бы такая же
+            int hitsOnTarget = 0;
+            for (int input = i; input > 0; input /= 10) {
+                if ((input % 10) % 2 != 0) {
+                    hitsOnTarget++;
+                }
+            }
+
+            if (hitsOnTarget == degree) {
+                sum += i;
+            }
+        }
+        System.out.printf("\nСумма всех чисел, содержащих нечетные цифры, равна: %,d", sum);
+
+        int countEvenNumbers = 0;
+        for (int i = sum; i > 0; i /= 10) {
+            if ((i % 10) % 2 == 0 && i % 10 != 0) {
+                countEvenNumbers++;
+            }
+        }
+        System.out.printf("\nКоличество четных цифр в найденной сумме равно %d", countEvenNumbers);
+        System.out.println();
+    }
+
+    /*
+    Задача 17
+     */
+
+    public static void countOperations(int userValue) {
+        int count = 0;
+        for (int input = userValue; input != 0; input -= calculateSumOfNumbers(input)) {
+            count++;
+        }
+        System.out.printf("Число вычитаний для получения нуля равно - %,d", count);
+    }
+
+    public static int calculateSumOfNumbers(int value) {
+        int sum = 0;
+        for (int i = value; i > 0; i /= 10) {
+            sum += (i % 10);
+        }
+        return sum;
+    }
+
+    /*
+    Задача 17
+     */
 }
