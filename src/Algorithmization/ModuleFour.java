@@ -6,22 +6,22 @@ import java.util.Arrays;
 public class ModuleFour {
 
     public static void main(String[] args) {
-//        showResultsOfNOKAndNOD(12, 30);
-//        findNODForFourValues(78, 294, 570, 36);
-//        calculateArea(4);
-//        findTheBiggestLengthBetweenTwoPoints();
-//        showSecondMaxValue(15, 56, 66, 4, 29, 87, 54, 59, 88, 66);
-//        isValuesSimple(8, 15, 9);
-//        calculateSumOfFactorials(1, 9);
-//        sumOfThreeValues(1, 2, 3, 4, 5, 6);
-//        showAreaOfQuadrangle(6, 4, 8, 10);
-//        showNumbersOfValue(4798765);
-//        whichOneIsMore(12345, 123456);
-//        buildArray(9, 100);
-//        findTwinsNumbers(2, 315);
-//        getArmstrongValues(5_000_000);
-//        showNumbersWithIncreasingSequence(10000);
-//        showSumOfValuesWithOddNumbers(1510);
+        showResultsOfNOKAndNOD(12, 30);
+        findNODForFourValues(78, 294, 570, 36);
+        calculateArea(4);
+        findTheBiggestLengthBetweenTwoPoints();
+        showSecondMaxValue(15, 56, 66, 4, 29, 87, 54, 59, 88, 66);
+        isValuesSimple(8, 15, 9);
+        calculateSumOfFactorials(1, 9);
+        sumOfThreeValues(1, 2, 3, 4, 5, 6);
+        showAreaOfQuadrangle(6, 4, 8, 10);
+        showNumbersOfValue(4798765);
+        whichOneIsMore(12345, 123456);
+        buildArray(9, 100);
+        findTwinsNumbers(2, 315);
+        getArmstrongValues(5_000_000);
+        showNumbersWithIncreasingSequence(10000);
+        showSumOfValuesWithOddNumbers(1510);
         countOperations(51);
     }
 

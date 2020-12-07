@@ -1,5 +1,6 @@
 package Algorithmization;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ModuleTwo {
@@ -20,6 +21,7 @@ public class ModuleTwo {
         sortColumnsOfMatrix(6, 4);
         buildMatrixByZeroAndOne(8, 5);
         findMaxAndChangeNegativeValues(5,9);
+        magicSquare(5);
     }
 
     public static void showOddColumnWhereFirstValueIsMoreThanLast(int numOfStrings, int numOfColumns) {
@@ -512,5 +514,69 @@ public class ModuleTwo {
             System.out.println();
         }
         System.out.println();
+    }
+
+    /*
+    Решение задачи 16 про "Магический куб" взято из инета,
+    т.к. я просто не понимаю сам алгоритм построения данного куба...
+    Но в этом решении тоже есть недочет - не все суммы столбцов равны...
+     */
+
+    public static void magicSquare(int size) {
+        int[][] matrix = new int[size][size];
+        if (size % 4 == 0) {
+            int value = 1;
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    matrix[i][j] = value++;
+                }
+            }
+
+            int count = 0;
+            for (int i = 0; i < matrix.length / 2; i++) {
+                int transitionMinDiagonal = matrix[i][i];
+                matrix[i][i] = matrix[matrix.length - 1 - count][matrix.length - 1 - count];
+                matrix[matrix.length - 1 - count][matrix.length - 1 - count] = transitionMinDiagonal;
+                int transitionAnotherDiagonal = matrix[matrix.length - 1 - count][i];
+                matrix[matrix.length - 1 - count][i] = matrix[i][matrix.length - 1 - count];
+                matrix[i][matrix.length - 1 - count] = transitionAnotherDiagonal;
+                count++;
+            }
+
+            for (int[] array : matrix) {
+                for (int item : array) {
+                    System.out.printf("|%3d|", item);
+                }
+                System.out.println();
+            }
+        } else if (size % 2 != 0) {
+            int x = size / 2;
+            int y = matrix.length - 1;
+            int value = 1;
+
+            while (true) {
+                matrix[(matrix.length - 1) - y][x] = value;
+                value++;
+                if (x == matrix.length - 1) x = -1;
+                if (y >= matrix.length - 1) y = -1;
+                y++;
+                x++;
+                if (matrix[matrix.length - 1 - y][x] != 0) y--;
+
+                int count = 0;
+                for (int[] array : matrix) {
+                    for (int z : array) {
+                        if (z == 0) count++;
+                    }
+                }
+                if (count == 0) break;
+            }
+            for (int[] array : matrix) {
+                for (int item : array) {
+                    System.out.printf("|%3d|", item);
+                }
+                System.out.println();
+            }
+        }
     }
 }
