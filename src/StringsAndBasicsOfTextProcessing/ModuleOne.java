@@ -1,19 +1,27 @@
 package StringsAndBasicsOfTextProcessing;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ModuleOne {
 
     public static void main(String[] args) {
+        System.out.println("Задание №1");
         transformCamelToSnakeCase();
+        System.out.println("Задание №2");
         changeWord();
+        System.out.println("Задание №3");
         findDigits("Hello 56 friend. I am 5 hero from 1945 year");
+        System.out.println("Задание №4");
         findNumbers("Hello 56 friend. I am 5 hero from 1945 year");
+        System.out.println("Задание №5");
         killExtraSpaces("  Hello    56   friend. I    am    5 hero  from    1945    year   ");
     }
 
     public static void transformCamelToSnakeCase() {
         String[] stringsArray = {"firstValue", "secondValue", "thirdValue", "firstNumberOfValue"};
+        System.out.println("Сперва названия переменных выглядил так :" + Arrays.toString(stringsArray));
+        System.out.println("Перевод названий в camelCase:");
 
         for (int i = 0; i < stringsArray.length; i++) {
             char[] charArray = stringsArray[i].toCharArray();
@@ -30,7 +38,7 @@ public class ModuleOne {
 
     public static void changeWord() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите строку, где необходимо заменить слово \"word\" на \"letter\"");
+        System.out.println("Введите строку, где необходимо заменить слово \"word\" на \"letter\" ");
         String inputString = scanner.nextLine();
         String outputString = inputString.replaceAll("word", "letter");
         outputString = outputString.replaceAll("Word", "letter");
@@ -46,7 +54,7 @@ public class ModuleOne {
                 countDigits++;
             }
         }
-        System.out.println(countDigits);
+        System.out.println("Количество цифр в введенной строке '" + userInputString + "' равно " + countDigits);
         System.out.println();
     }
 
@@ -58,7 +66,7 @@ public class ModuleOne {
                 countNumbers++;
             }
         }
-        System.out.println(countNumbers);
+        System.out.println("Количество чисел в введенной строке '" + userInputString + "' равно " + countNumbers);
         System.out.println();
     }
 
@@ -72,7 +80,7 @@ public class ModuleOne {
             }
             outputString += arrayOfChars[i];
         }
-        System.out.println(outputString);
+        System.out.println("В строке '" + userInputString + "' убрали все лишние пробелы и получили - \n" + outputString);
         System.out.println();
     }
 }
