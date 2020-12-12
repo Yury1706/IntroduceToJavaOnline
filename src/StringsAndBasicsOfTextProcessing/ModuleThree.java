@@ -90,6 +90,7 @@ public class ModuleThree {
                 System.out.println();
             }
         }
+        System.out.println();
     }
 
     public static void sortLexemes(String[] string) {
@@ -97,9 +98,7 @@ public class ModuleThree {
 
         char ch = 'о';
         Pattern pattern = Pattern.compile("[\\.|\\?|\\!]");
-        Pattern pattern1 = Pattern.compile("([a-zа-яA-ZА-ЯёЁ]+)?[Оо].+?\\b");
-        Pattern pattern2 = Pattern.compile("[Character.toString(ch).toLowerCase() | Character.toString(ch).toUpperCase()]");
-
+        Pattern pattern1 = Pattern.compile("\\b[a-zа-яA-ZА-ЯёЁ]*[Оо][a-zа-яA-ZА-ЯёЁ]*\\b");
 
         for (int i = 0; i < string.length; i++) {
             String[] sentences = pattern.split(string[i]);                   //разбиваем каждый абзац на предложения
@@ -120,7 +119,7 @@ public class ModuleThree {
                 for (int k = 0; k < words.length; k++) {                                //перебор по словам
                     int hits = 0;
                     for (int l = 0; l < words[k].length(); l++) {                       //перебор по символам в слове
-                        if (words[k].charAt(l) == ch) {
+                        if (Character.toLowerCase(words[k].charAt(l)) == ch) {
                             hits++;
                         }
                     }
@@ -130,12 +129,17 @@ public class ModuleThree {
                     for (int l = k + 1; l < words.length; l++) {                        //сравнение со следующим словом
                         hits = 0;
                         for (int m = 0; m < words[l].length(); m++) {
-                            if (words[l].charAt(m) == ch) {
+                            if (Character.toLowerCase(words[l].charAt(m)) == ch) {
                                 hits++;
                             }
                         }
                         if (hits > maxValue) {
+                            maxValue = hits;
                             maxIndex = l;
+                        } else if (hits == maxValue) {
+                            if (sortLexemesByNatural(words[maxIndex], words[l]) == 2) {
+                                maxIndex = l;
+                            }
                         }
                     }
                     String temp = words[maxIndex];
@@ -150,9 +154,28 @@ public class ModuleThree {
         }
     }
 
+    public static int sortLexemesByNatural(String str1, String str2) {
+        for (int i = 0; i < str1.length() || i < str2.length(); i++) {
+            if (Character.toLowerCase(str1.charAt(i)) == Character.toLowerCase(str2.charAt(i))) {
+                if (i != str1.length() - 1 && i != str2.length() - 1) {
+                    continue;
+                } else if (i == str1.length() - 1 && i != str2.length() - 1) {
+                    return 1;
+                } else if (i != str1.length() - 1 && i == str2.length() - 1) {
+                    return 2;
+                }
+            } else if (Character.toLowerCase(str1.charAt(i)) < Character.toLowerCase(str2.charAt(i))) {
+                return 1;
+            } else if (Character.toLowerCase(str1.charAt(i)) > Character.toLowerCase(str2.charAt(i))) {
+                return 2;
+            }
+        }
+        return 1;
+    }
+
     public static void main(String[] args) {
         String[] string = sortParagraphs(userString);
-//        sortWordInSentences(string);
+        sortWordInSentences(string);
         sortLexemes(string);
     }
 }
