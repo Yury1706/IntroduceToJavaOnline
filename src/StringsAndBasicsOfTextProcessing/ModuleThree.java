@@ -137,7 +137,7 @@ public class ModuleThree {
                             maxValue = hits;
                             maxIndex = l;
                         } else if (hits == maxValue) {
-                            if (sortLexemesByNatural(words[maxIndex], words[l]) == 2) {
+                            if (words[l].compareTo(words[k]) < 0) {
                                 maxIndex = l;
                             }
                         }
@@ -152,25 +152,6 @@ public class ModuleThree {
                 System.out.println();
             }
         }
-    }
-
-    public static int sortLexemesByNatural(String str1, String str2) {
-        for (int i = 0; i < str1.length() || i < str2.length(); i++) {
-            if (Character.toLowerCase(str1.charAt(i)) == Character.toLowerCase(str2.charAt(i))) {
-                if (i != str1.length() - 1 && i != str2.length() - 1) {
-                    continue;
-                } else if (i == str1.length() - 1 && i != str2.length() - 1) {
-                    return 1;
-                } else if (i != str1.length() - 1 && i == str2.length() - 1) {
-                    return 2;
-                }
-            } else if (Character.toLowerCase(str1.charAt(i)) < Character.toLowerCase(str2.charAt(i))) {
-                return 1;
-            } else if (Character.toLowerCase(str1.charAt(i)) > Character.toLowerCase(str2.charAt(i))) {
-                return 2;
-            }
-        }
-        return 1;
     }
 
     public static void main(String[] args) {

@@ -2,20 +2,28 @@ package ProgrammingWithClasses;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Train {
 
-    String destination;
-    int numberOfTrain;
-    LocalTime time;
+    private String destination;
+
+    private int numberOfTrain;
+    private LocalTime time;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
     public Train(String destination, int numberOfTrain, String time) {
         this.destination = destination;
         this.numberOfTrain = numberOfTrain;
         this.time = LocalTime.parse(time, formatter);
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public LocalTime getTime() {
+        return time;
     }
 
     @Override
@@ -27,7 +35,7 @@ public class Train {
                 '}';
     }
 
-    private static Train[] sortTrainsByNumberOfTrain(Train[] trains) {
+    private static void sortTrainsByNumberOfTrain(Train[] trains) {
         Train[] inputTrains = trains;
         for (int i = 0; i < trains.length; i++) {
             for (int j = trains.length - 1; j > i; j--) {
@@ -38,7 +46,10 @@ public class Train {
                 }
             }
         }
-        return inputTrains;
+
+        for (int i = 0; i < inputTrains.length; i++) {
+            System.out.println(inputTrains[i]);
+        }
     }
 
     private static void showInfoOfTrain(Train[] trains) {
@@ -52,19 +63,37 @@ public class Train {
         }
     }
 
+    public static void sortTrainsByDestinationAndTime(Train[] trains) {
+        for (int i = 0; i < trains.length - 1; i++) {
+            for (int j = i + 1; j < trains.length; j++) {
+                if (trains[i].getDestination().compareTo(trains[j].getDestination()) > 0) {
+                    Train currentTrain = trains[i];
+                    trains[i] = trains[j];
+                    trains[j] = currentTrain;
+                } else if (trains[i].getDestination().compareTo(trains[j].getDestination()) == 0) {
+                    if (trains[i].getTime().compareTo(trains[j].getTime()) > 0) {
+                        Train currentTrain = trains[i];
+                        trains[i] = trains[j];
+                        trains[j] = currentTrain;
+                    }
+                }
+            }
+        }
+        for (Train train : trains) {
+            System.out.println(train);
+        }
+    }
+
     public static void main(String[] args) {
         Train[] trains = new Train[5];
         trains[0] = new Train("Brest", 1458, "10:00");
         trains[1] = new Train("Grodno", 1500, "18:00");
         trains[2] = new Train("Gomel", 1694, "09:00");
         trains[3] = new Train("Mogilev", 1351, "20:00");
-        trains[4] = new Train("Brest", 1299, "12:00");
+        trains[4] = new Train("Brest", 1299, "09:00");
 
-        Train[] sortedTrainsByNumberOfTrains = sortTrainsByNumberOfTrain(trains);
-        for (int i = 0; i < sortedTrainsByNumberOfTrains.length; i++) {
-            System.out.println(sortedTrainsByNumberOfTrains[i]);
-        }
-
+        sortTrainsByNumberOfTrain(trains);
         showInfoOfTrain(trains);
+        sortTrainsByDestinationAndTime(trains);
     }
 }

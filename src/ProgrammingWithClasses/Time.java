@@ -1,0 +1,55 @@
+package ProgrammingWithClasses;
+
+public class Time {
+
+    int hour;
+    int minute;
+    int seconds;
+
+    public Time(int hour, int minute, int seconds) {
+        if (hour > 0 && hour < 13) {
+            this.hour = hour;
+        } else this.hour = 0;
+        if (minute >= 0 && minute < 60) {
+            this.minute = minute;
+        } else minute = 0;
+        if (minute >= 0 && minute < 60) {
+            this.seconds = seconds;
+        } else seconds = 0;
+    }
+
+    public void setHour(int hour) {
+        if (hour > 0 && hour < 13) {
+            this.hour = hour;
+        } else this.hour = 0;
+    }
+
+    public void setMinute(int minute) {
+        if (minute >= 0 && minute < 60) {
+            this.minute = minute;
+        } else this.minute = 0;
+    }
+
+    public void setSeconds(int seconds) {
+        if (seconds >= 0 && seconds < 60) {
+            this.seconds = seconds;
+        } else this.seconds = 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Заданное время - " +
+                "hour = " + hour +
+                ", minute = " + minute +
+                ", seconds = " + seconds;
+    }
+
+    public static void main(String[] args) {
+        Time time = new Time(12,02,59);
+        System.out.println(time);
+        time.setHour(11);
+        time.setMinute(11);
+        time.setSeconds(11);
+        System.out.println(time);
+    }
+}

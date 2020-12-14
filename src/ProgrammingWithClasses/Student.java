@@ -27,6 +27,21 @@ public class Student {
                 '}';
     }
 
+    public static void findStudentsWithHighRating(Student[] students) {
+        for (int i = 0; i < students.length; i++) {
+            int[] progress = students[i].getProgress();
+            boolean highRating = true;
+            for (int j = 0; j < progress.length; j++) {
+                if (progress[j] < 9) {
+                    highRating = false;
+                }
+            }
+            if (highRating) {
+                System.out.println(students[i]);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Student[] students = new Student[10];
         students[0] = new Student("Ivanov A.A.", 17, new int[]{5, 6, 7, 8, 4});
@@ -40,17 +55,6 @@ public class Student {
         students[8] = new Student("Vasin T.T.", 21, new int[]{5, 8, 7, 8, 9});
         students[9] = new Student("Borgov O.V.", 11, new int[]{9, 9, 9, 10, 10});
 
-        for (int i = 0; i < students.length; i++) {
-            int[] progress = students[i].getProgress();
-            boolean highRating = true;
-            for (int j = 0; j < progress.length; j++) {
-                if (progress[j] < 9) {
-                    highRating = false;
-                }
-            }
-            if (highRating) {
-                System.out.println(students[i]);
-            }
-        }
+        findStudentsWithHighRating(students);
     }
 }
