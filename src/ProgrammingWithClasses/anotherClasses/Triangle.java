@@ -1,4 +1,4 @@
-package ProgrammingWithClasses;
+package ProgrammingWithClasses.anotherClasses;
 
 public class Triangle {
 
@@ -62,20 +62,9 @@ public class Triangle {
                 + Math.pow(Math.abs(triangle.getCoordinateYOfPointB() - triangle.getCoordinateYOfPointC()), 2));
         double perimeter = sideAB + sideAC + sideBC;
 
-        double square = Math.sqrt(perimeter/2 * (perimeter/2 - sideAB) * (perimeter/2-sideAC) * (perimeter/2 - sideBC));
+        double square = Math.sqrt(perimeter / 2 * (perimeter / 2 - sideAB) * (perimeter / 2 - sideAC) * (perimeter / 2 - sideBC));
         System.out.printf("Периметр треугольника по значениям трех сторон равен %.2f", perimeter);
         System.out.println();
         System.out.printf("Площадь треугольника по значениям трех сторон равна %.2f", square);
-    }
-
-    public static void main(String[] args) {
-        Triangle triangle = new Triangle();
-        triangle.setPointA(2, 4);
-        triangle.setPointB(5, 5);
-        triangle.setPointC(8, 3);
-
-        findCoordinateOfMedian(triangle);
-        System.out.println();
-        findPerimeterAndSquareOfTriangleBySides(triangle);
     }
 }

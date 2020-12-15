@@ -1,4 +1,4 @@
-package ProgrammingWithClasses;
+package ProgrammingWithClasses.anotherClasses;
 
 public class Test1 {
 

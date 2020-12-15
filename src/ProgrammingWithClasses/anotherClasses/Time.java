@@ -1,4 +1,4 @@
-package ProgrammingWithClasses;
+package ProgrammingWithClasses.anotherClasses;
 
 public class Time {
 
@@ -42,14 +42,5 @@ public class Time {
                 "hour = " + hour +
                 ", minute = " + minute +
                 ", seconds = " + seconds;
-    }
-
-    public static void main(String[] args) {
-        Time time = new Time(12,02,59);
-        System.out.println(time);
-        time.setHour(11);
-        time.setMinute(11);
-        time.setSeconds(11);
-        System.out.println(time);
     }
 }

@@ -1,4 +1,4 @@
-package ProgrammingWithClasses;
+package ProgrammingWithClasses.anotherClasses;
 
 public class Counter {
     /*
@@ -29,18 +29,6 @@ public class Counter {
         value--;
         if (value == -1) {
             value = 9;
-        }
-    }
-
-    public static void main(String[] args) {
-        Counter counter1 = new Counter();
-        Counter counte2 = new Counter(5);
-
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Значение первого счеткика равно: " + counter1.getValue()
-                    + ". Значение второго счеткика равно: " + counte2.getValue());
-            counter1.plus();
-            counte2.minus();
         }
     }
 }
