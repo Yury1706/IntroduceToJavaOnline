@@ -3,26 +3,17 @@ package ProgrammingWithClasses.nation;
 public class Nation {
 
     private String name;
-    City[] cities;
-    Region[] regions;
-    CountryArea[] countryAreas;
-    private String capital;
+    private City capital;
+    private CountryArea[] countryAreas;
 
-    public Nation(String name,City[] cities, Region[] regions, CountryArea[] countryAreas, String capital) {
+    public Nation(String name, City capital, CountryArea[] countryAreas) {
         this.name = name;
-        this.cities = cities;
-        this.regions = regions;
-        this.countryAreas = countryAreas;
         this.capital = capital;
+        this.countryAreas = countryAreas;
     }
 
     public void showCapitalInfo() {
-        for (int i = 0; i < cities.length; i++) {
-            if (cities[i].equals(capital)) {
-                System.out.println("Столица государства " + name + " является город " +
-                        cities[i].getName() + " с населением в " + cities[i].getPopulation() + " человек.");
-            }
-        }
+        System.out.println("Столицей государства " + name  + " является " + capital.getName());
     }
 
     public void showNumberOfCountryAreas() {
@@ -44,7 +35,9 @@ public class Nation {
         }
     }
 
-    public void showAreasCities() {
-
+    public void showAreasCenters() {
+        for (int i = 0; i < countryAreas.length; i++) {
+            System.out.println(countryAreas[i].getName() + " область: областной центр - " + countryAreas[i].getCountryAreaCenter().getName());
+        }
     }
 }

@@ -2,6 +2,9 @@ package ProgrammingWithClasses;
 
 import ProgrammingWithClasses.Car.Car;
 import ProgrammingWithClasses.nation.City;
+import ProgrammingWithClasses.nation.CountryArea;
+import ProgrammingWithClasses.nation.Nation;
+import ProgrammingWithClasses.nation.Region;
 import ProgrammingWithClasses.text.Sentence;
 import ProgrammingWithClasses.text.Text;
 import ProgrammingWithClasses.text.Word;
@@ -132,6 +135,35 @@ public class App {
 //        car1.ride();
 //        car1.showModel();
 
+        //Реализация на уровне двух областей и двух районов для примера...
+//        City[] citiesOfGrodnoRegion = new City[4];
+//        citiesOfGrodnoRegion[0] = new City("Гродно");
+//        citiesOfGrodnoRegion[1] = new City("Озеры");
+//        citiesOfGrodnoRegion[2] = new City("Коптевка");
+//        citiesOfGrodnoRegion[3] = new City("Скидель");
+//
+//        City[] citiesOfMinskRegion = new City[4];
+//        citiesOfMinskRegion[0] = new City("Минск");
+//        citiesOfMinskRegion[1] = new City("Боровляны");
+//        citiesOfMinskRegion[2] = new City("Ждановичи");
+//        citiesOfMinskRegion[3] = new City("Сеница");
+//
+//        Region[] regionsOfGrodnoArea = new Region[1];
+//        regionsOfGrodnoArea[0] = new Region("Гродненский", citiesOfGrodnoRegion[0], citiesOfGrodnoRegion);
+//
+//        Region[] regionsOfMinskArea = new Region[1];
+//        regionsOfMinskArea[0] = new Region("Минский", citiesOfMinskRegion[0], citiesOfMinskRegion);
+//
+//        CountryArea[] countryAreas = new CountryArea[2];
+//        countryAreas[0] = new CountryArea("Гродненская", 25_127, citiesOfGrodnoRegion[0], regionsOfGrodnoArea);
+//        countryAreas[1] = new CountryArea("Минская", 39_912, citiesOfMinskRegion[0],regionsOfMinskArea);
+//
+//        Nation nation = new Nation("Беларусь", citiesOfMinskRegion[0], countryAreas);
+//        nation.showCapitalInfo();
+//        nation.showNumberOfCountryAreas();
+//        nation.areaOfEachCountryArea();
+//        nation.showTotalArea();
+//        nation.showAreasCenters();
 
     }
 }
