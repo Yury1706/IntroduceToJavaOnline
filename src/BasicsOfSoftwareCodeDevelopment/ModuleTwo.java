@@ -1,4 +1,4 @@
-package basicsOfSoftwareCodeDevelopment;
+package BasicsOfSoftwareCodeDevelopment;
 
 public class ModuleTwo {
 
